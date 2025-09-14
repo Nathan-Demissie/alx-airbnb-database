@@ -13,3 +13,9 @@ UNION
 SELECT users.*, bookings.*
 FROM bookings
 LEFT JOIN users ON bookings.user_id = users.id;
+
+-- Retrieve all properties and their reviews, including properties with no reviews
+SELECT properties.*, reviews.*
+FROM properties
+LEFT JOIN reviews ON properties.id = reviews.property_id
+ORDER BY properties.id;
